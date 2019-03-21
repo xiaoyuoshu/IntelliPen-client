@@ -1,0 +1,13 @@
+<!--pages/planlist/planlist.wxml-->
+<view class="devices_summary" style='text-align:center;font-size:20px'>训练记录</view>
+<scroll-view class="device_list" style="height: 100%;" scroll-y scroll-with-animation>
+  <view wx:for="{{groups}}"
+   class="device_item"
+   hover-class="device_item_hover">
+    <view bindtap='showDet' id="{{item.KEY}}">
+      <view style="font-size: 16px; color: #333;">{{item.TrainType}}</view>
+      <view style="font-size: 10px">训练时间: {{item.BeginDate}}</view>
+      <view style="font-size: 10px">平均等级: {{item.AveLevel}}</view>
+    </view>
+  </view>
+</scroll-view>

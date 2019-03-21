@@ -1,0 +1,6 @@
+<!--pages/train/train.wxml-->
+<button class = "btn" style = "margin-top: 160rpx" bindtap='dailyTrain'>综合训练</button>
+<button class = "btn" bindtap='randomStrocksTrain'>笔画随机训练</button>
+<button class = "btn" bindtap='sortedStrocksTrain'>笔画顺序训练</button>
+<button class = "btn" bindtap='randomWordsTrain'>整字随机训练</button>
+<button class = "btn" bindtap='sortedWordsTrain'>整字顺序训练</button>

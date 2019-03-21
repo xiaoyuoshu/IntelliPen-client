@@ -1,0 +1,52 @@
+{
+  "pages": [
+    
+    "pages/train/train",
+    "pages/reChargeDet/reChargeDet",
+    "pages/tips/tips",
+    "pages/index/index",
+    "pages/planlist/planlist",
+    "pages/reCharge/reCharge",
+    "pages/collect/collect",
+    "pages/trainDet/trainDet",
+    "pages/trainItemDet/trainItemDet"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1296db",
+    "navigationBarTitleText": "IntelliPen",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#1296db",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/train/train",
+        "iconPath": "image/train_0.png",
+        "selectedIconPath": "image/train_1.png",
+        "text": "训练"
+      },
+      {
+        "pagePath": "pages/planlist/planlist",
+        "iconPath": "image/jilu_0.png",
+        "selectedIconPath": "image/jilu.png",
+        "text": "记录"
+      },
+      {
+        "pagePath": "pages/tips/tips",
+        "iconPath": "image/tips_0.png",
+        "selectedIconPath": "image/tips_1.png",
+        "text": "成绩"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  }
+}

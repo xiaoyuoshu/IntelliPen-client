@@ -1,0 +1,18 @@
+<!--pages/tips/tips.wxml-->
+<!--
+<button bindtap="startCollectPages">收集数据</button>
+<button bindtap="startReChargePages">数据重判</button>
+-->
+<view class="devices_summary" style='text-align:center;font-size:20px'>成绩记录</view>
+<scroll-view class="device_list" style="height: 100%;" scroll-y scroll-with-animation>
+  <view wx:for="{{groups}}"
+   class="device_item"
+   hover-class="device_item_hover">
+    <view>
+      <view style="font-size: 16px; color: #333;">{{item.Name}}</view>
+      <view style="font-size: 10px">等级3：{{item.L3}}/{{item.Total}}</view>
+      <view style="font-size: 10px">等级2：{{item.L2}}/{{item.Total}}</view>
+      <view style="font-size: 10px">等级1：{{item.L1}}/{{item.Total}}</view>
+    </view>
+  </view>
+</scroll-view>

@@ -1,0 +1,13 @@
+<!--pages/reCharge/reCharge.wxml-->
+<loading hidden="{{loadingHidden}}">正在获取数据</loading>
+<view class="devices_summary">已收集 {{groups.length}} 组数据：</view>
+<scroll-view class="device_list" style="height: 100%;" scroll-y scroll-with-animation>
+  <view wx:for="{{groups}}"
+   class="device_item"
+   hover-class="device_item_hover">
+    <view bindtap='initGroups' id="{{item.groups}}">
+      <view style="font-size: 16px; color: #333;">第{{item.groups}}组</view>
+      <view style="font-size: 10px">收集开始时间: {{item.time}}</view>
+    </view>
+  </view>
+</scroll-view>

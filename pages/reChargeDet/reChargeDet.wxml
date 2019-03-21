@@ -1,0 +1,30 @@
+<!--pages/reChargeDet/reChargeDet.wxml-->
+<loading hidden="{{loadingHidden}}">正在获取数据</loading>
+<view class="devices_summary">第 {{groups}} 组共有 {{strocks.length}} 组笔画：</view>
+<scroll-view class="device_list" style="height: 100%;" scroll-y scroll-with-animation>
+  <view wx:for="{{strocks}}"
+   class="device_item"
+   hover-class="device_item_hover">
+    <view bindtap='change_level' id="{{item.strock}}">
+      <view style="font-size: 16px; color: #333;">{{item.strock}}</view>
+      <view style="font-size: 10px">等级: {{item.level}}</view>
+      <view style="font-size: 10px">收集开始时间: {{item.time}}</view>
+    </view>
+  </view>
+</scroll-view>
+
+<view class="modal-mask"  catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">第 {{groups}} 组的 {{nowStrock}} 旧的等级为{{nowlevel}}</view>
+  <view class="modal-content">
+    <checkbox-group bindchange="checkboxChange">
+      <label class="checkbox" wx:for="{{items}}">
+        <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+      </label>
+    </checkbox-group>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+  </view>
+</view>

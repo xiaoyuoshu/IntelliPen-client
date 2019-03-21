@@ -1,0 +1,58 @@
+<!--pages/collect/collect.wxml-->
+
+<loading hidden="{{loadingHidden}}">正在尝试连接SmartPen</loading>
+<loading hidden="{{submitingHidden}}">正在上传数据</loading>
+
+<view class='card'>
+  <view class='datatext'>当前时间：{{currentData.currentTime-currentData.collectTime}}s</view>
+</view>
+<view class='card'>
+  <view class='datatext'>角速度：α:{{currentData.w_alpha}}  β:{{currentData.w_beta}}  γ:{{currentData.w_gama}}</view>
+</view>
+<view class='card'>
+  <view class='datatext'>加速度：x:{{currentData.a_x}}  y:{{currentData.a_y}}  z:{{currentData.a_z}}</view>
+</view>
+<view class='card'>
+  <view class='datatext'>角度： α:{{currentData.alpha}}</view>
+  <view class='datatext' style='padding-left: 144rpx'>       β:{{currentData.beta}}</view>
+  <view class='datatext' style='padding-left: 144rpx'>       γ:{{currentData.gama}}</view>
+</view>
+<view class='card'>
+  <view class='datatext'>力度：F1:{{currentData.force1}}  F2:{{currentData.force2}}  F3:{{currentData.force3}}</view>
+</view>
+
+<view style='flex-direction: row;display: flex'>
+  <view  class='card'>
+    <image style='width:500rpx' mode='aspectFit' src='../../image/strocks/{{strock.address}}.png'>
+    </image>
+  </view>
+  <view  class='card' style='width:100%'>
+    <view>当前笔画</view>
+    <view>{{strock.name}}</view>
+    <view>---------</view>
+    <view>常见字</view>
+    <view>{{strock.relaWords}}</view>
+    <view>---------</view>
+    <view>落笔状态</view>
+    <view>{{penState}}</view>
+    <view>---------</view>
+    <view>下一笔画</view>
+    <view>{{nextstrock.name}}</view>
+  </view>
+</view>
+
+<view class="modal-mask"  catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">本次收集到{{dataLenth}}条数据</view>
+  <view class="modal-content">
+    <checkbox-group bindchange="checkboxChange">
+      <label class="checkbox" wx:for="{{items}}">
+        <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+      </label>
+    </checkbox-group>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+  </view>
+</view>
